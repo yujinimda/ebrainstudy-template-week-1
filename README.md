@@ -1,8 +1,3 @@
-# eb-study-template-1week
-
-eBrainSoft 포트폴리오 스터디 1주차 템플릿 (게시판 프로젝트 스캐폴드).
-요구사항은 리포 루트의 `[eBrainSoft] 웹개발 취준생을 위한 포트폴리오 스터디 - 게시판 V1.1.pdf` 참고.
-
 ## 기술 스택
 
 - **JDK 17**
