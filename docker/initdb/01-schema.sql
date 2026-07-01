@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS category;
 -- ------------------------------------------------------------
 CREATE TABLE category (
     category_id  INT          NOT NULL AUTO_INCREMENT,   -- PK, 1씩 자동 증가
-    name         VARCHAR(50)  NOT NULL,                  -- 카테고리 이름
+    name         VARCHAR(50)  NOT NULL UNIQUE,           -- 카테고리 이름 (중복 금지)
     PRIMARY KEY (category_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -65,7 +65,7 @@ CREATE TABLE attachment (
     attachment_id INT          NOT NULL AUTO_INCREMENT,  -- PK
     board_id      INT          NOT NULL,                 -- FK → board
     original_name VARCHAR(255) NOT NULL,                 -- 원본 파일명
-    stored_name   VARCHAR(255) NOT NULL,                 -- 서버 저장 파일명
+    stored_name   VARCHAR(255) NOT NULL UNIQUE,          -- 서버 저장 파일명 (고유, 겹치면 안 됨)
     file_size     BIGINT       NOT NULL,                 -- 파일 크기(byte) — 클 수 있어 BIGINT
     created_at    DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (attachment_id),
