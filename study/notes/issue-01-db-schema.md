@@ -33,3 +33,5 @@ docker-compose down && docker-compose up -d        # 스키마 바꾼 뒤 재생
 - 테이블 4개 + FK 3개 + 카테고리 기본값 5개까지 자동 생성 확인.
 - 내 초안에서 고친 것: 모든 테이블에 PK 추가 / 게시글에 category_id로 카테고리 연결 / 첨부는 게시글 컬럼이 아니라 별도 테이블.
 - 첨부는 실무라면 클라우드+링크지만, 이번 과제는 "바이너리 다운로드" 요구라 서버 저장 + 메타데이터 방식(이슈 #13에서 I/O로 구현).
+- 리뷰 중 UNIQUE 추가: `category.name`(카테고리 이름 중복 금지), `attachment.stored_name`(서버 저장 파일명은 고유해야 함, 안전망). 판단 기준 = "이 값이 중복되면 안 되는가". `original_name`은 중복 정상이라 UNIQUE 안 붙임. PK는 자동으로 UNIQUE라 따로 안 붙여도 됨.
+- 삭제 정책(부모 삭제 시 자식 처리: ON DELETE CASCADE vs 앱 코드+트랜잭션)은 이슈 #11에서 결정. 실무는 soft delete(deleted_at 표시)가 가장 흔함.
