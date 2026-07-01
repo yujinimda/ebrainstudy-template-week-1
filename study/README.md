@@ -15,7 +15,7 @@
 
 | # | 이슈 | 자바의 정석 장 | 핵심 자바 | 노트 |
 |---|------|---------------|-----------|------|
-| 1 | DB 스키마 + DDL | (SQL) | 자료형↔컬럼, PK/FK | |
+| 1 | DB 스키마 + DDL | (SQL) | 자료형↔컬럼, PK/FK | [issue-01](./notes/issue-01-db-schema.md) |
 | 2 | DB 연결 정리 | 8장 예외처리 | try-with-resources, static/final | |
 | 3 | VO 클래스 | 6장 OOP I | 클래스·생성자·캡슐화 | |
 | 4 | DAO 목록 조회 | 11·12·4장 | List, 제네릭, while 반복 | |
