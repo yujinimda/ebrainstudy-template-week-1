@@ -14,3 +14,6 @@ services:
     command:
       - --character-set-server=UTF8MB4
       - --collation-server=UTF8MB4_UNICODE_CI
+    volumes:
+      # 최초 기동 시 이 폴더의 .sql 파일이 자동 실행됨 (테이블/기본데이터 생성)
+      - ./initdb:/docker-entrypoint-initdb.d
